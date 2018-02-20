@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dice Rolling Counter</title>
+</head>
+
+<body>
+
+    <main id="main">
+        <h1>Dice Rolling Counter</h1>
+    </main>
+
+    <script>
+        const rollCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        const destination = document.getElementById("main");
+
+            for (i = 0; i <= 1000; i++) {
+                let diceOne = Math.ceil(Math.random() * 6);
+                let diceTwo = Math.ceil(Math.random() * 6);
+                let roll = diceOne + diceTwo;
+                rollCount[roll] += 1;
+            }
+            for (let j = 2; j <= 12; j++) {
+                let newDiv = document.createElement("div");
+                var newText = document.createTextNode("#" + (j) + ": " + rollCount[j]);
+                newDiv.appendChild(newText);
+                destination.appendChild(newDiv);
+            }
+       
+    </script>
+</body>
+
+</html>
